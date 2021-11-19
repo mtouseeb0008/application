@@ -1,0 +1,21 @@
+<div>
+  <ul>
+    <% for (let i of applicationdata) { %>
+    <div class="contact">
+      <li>
+        <p><%= i.name %></p>
+        <p><%= i.rollno %></p>
+      </li>
+    </div>
+    <div class="delete-button">
+      <a href="/delete/?id=<%= i._id %>"> delete </a>
+    </div>
+    <% } %>
+  </ul>
+</div>
+
+<form action="/post_application" method="POST">
+  <input type="text" name="name" placeholder="Enter name" required />
+  <input type="number" name="rollno" placeholder="Enter rollno" required />
+  <button type="submit">Add</button>
+</form>
