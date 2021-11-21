@@ -1,18 +1,29 @@
 // student sign
 const Student = require("../models/student");
+module.exports.profile = function (req, res) {
+  return res.render("profile", {
+    title: "profile",
+  });
+};
 module.exports.signup = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/student/profile");
+  }
   return res.render("student_sign_up", {
     title: "Student signup",
   });
 };
 //studen sign in page
 module.exports.signin = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.redirect("/student/profile");
+  }
   return res.render("student_sign", {
     title: "Student signin",
   });
 };
 // student database
-module.exports.data = function (req, res) {
+module.exports.create = function (req, res) {
   if (req.body.password != req.body.confirm_password) {
     return res.redirect("back");
   }
@@ -47,4 +58,10 @@ module.exports.data = function (req, res) {
 
 module.exports.createSession = function (req, res) {
   //todo later
+  return res.redirect("/");
+};
+
+module.exports.destroySession = function (req, res) {
+  req.logout();
+  return res.redirect("/");
 };

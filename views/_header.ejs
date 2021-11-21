@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-primary">
+<nav class="navbar navbar-light bg-secondary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img
@@ -11,6 +11,24 @@
       Digital Management Application
     </a>
   </div>
+  <ul>
+    <%if(locals.student){%>
+    <li><%=student.name%></li>
+    <li>
+      <a style="color: white" href="/student/sign-out">signout</a>
+    </li>
+    <%}else{%>
+
+    <li>
+      <a href="/student/sign-in">signin</a>
+    </li>
+
+    <li>
+      <a href="/student/sign-up">signup</a>
+    </li>
+
+    <%}%>
+  </ul>
 </nav>
 
 <body>
