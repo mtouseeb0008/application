@@ -6,4 +6,6 @@ router.get("/", homeController.home);
 router.get("/contact", homeController.contact);
 router.get("/delete", homeController.delete);
 router.use("/student", require("./student"));
+router.use("/teacher", require("./teacher"));
+router.use("/post", require("./post"));
 module.exports = router;

@@ -1,8 +1,22 @@
 const Application = require("../models/application");
+const Post = require("../models/post");
+const { post } = require("../routes");
 module.exports.home = function (req, res) {
-  return res.render("home", {
-    title: "kuldeep",
-  });
+  // Post.find({}, function (err, posts) {
+  //   return res.render("home", {
+  //     title: "kuldeep",
+  //     posts: posts,
+  //   });
+  // });
+  // populate user object
+  Post.find({})
+    .populate("student")
+    .exec(function (err, post) {
+      return res.render("home", {
+        title: "kuldeep",
+        posts: post,
+      });
+    });
 };
 module.exports.contact = function (req, res) {
   Application.find({}, function (err, applicationdata) {

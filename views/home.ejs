@@ -76,3 +76,21 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+<section id="feed-posts">
+  <h4>Post</h4>
+  <form action="/post/create" id="new-post-form" method="POST">
+    <textarea name="content" rows="3" cols="30" placeholder="type massage">
+    </textarea>
+    <input type="submit" value="post" />
+  </form>
+</section>
+<div id="feed-list">
+  <ul>
+    <% for(post of posts) {%>
+    <li>
+      <%=post.content%>
+      <small> <%=post.student.name%> </small>
+    </li>
+    <%}%>
+  </ul>
+</div>
