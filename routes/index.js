@@ -8,4 +8,5 @@ router.get("/delete", homeController.delete);
 router.use("/student", require("./student"));
 router.use("/teacher", require("./teacher"));
 router.use("/post", require("./post"));
+router.use("/comments", require("./comments"));
 module.exports = router;

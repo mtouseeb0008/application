@@ -11,6 +11,12 @@ module.exports.home = function (req, res) {
   // populate user object
   Post.find({})
     .populate("student")
+    .populate({
+      path: "comments",
+      populate: {
+        path: "student",
+      },
+    })
     .exec(function (err, post) {
       return res.render("home", {
         title: "kuldeep",

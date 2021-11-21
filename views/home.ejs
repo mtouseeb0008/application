@@ -77,13 +77,17 @@
   </button>
 </div>
 <section id="feed-posts">
+  <%if(locals.student){%>
   <h4>Post</h4>
+
   <form action="/post/create" id="new-post-form" method="POST">
     <textarea name="content" rows="3" cols="30" placeholder="type massage">
     </textarea>
     <input type="submit" value="post" />
   </form>
+  <%}%>
 </section>
+<%if(locals.student){%>
 <div id="feed-list">
   <ul>
     <% for(post of posts) {%>
@@ -91,6 +95,30 @@
       <%=post.content%>
       <small> <%=post.student.name%> </small>
     </li>
+    <div class="post-comments">
+      <form action="/comments/create" method="POST">
+        <input
+          type="text"
+          name="content"
+          placeholder="Type Here to add comment.."
+        />
+        <input type="hidden" name="post" value="<%=post._id%>" />
+        <input type="submit" value="add comment" />
+      </form>
+    </div>
+    <div class="post-comments-list">
+      <ul id="post-comments-<%=post._id%>" class="post-comments">
+        <% for(comment of post.comments){%>
+        <p>
+          <%=comment.content%>
+          <br />
+          <small> <%=comment.student.name%> </small>
+        </p>
+
+        <%}%>
+      </ul>
+    </div>
     <%}%>
   </ul>
 </div>
+<%}%>
