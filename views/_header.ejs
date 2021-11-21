@@ -1,34 +1,36 @@
-<nav class="navbar navbar-light bg-secondary">
+<nav class="navbar navbar-light bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img
+      <!-- <img
         src="/docs/5.1/assets/brand/bootstrap-logo.svg"
         alt=""
         width="30"
         height="24"
         class="d-inline-block align-text-top"
-      />
-      Digital Management Application
+      /> -->
+      <h1><b>Digital Management Application</b></h1>
     </a>
+    <ul>
+      <%if(locals.student){%>
+      <li><%=student.name%></li>
+      <li>
+        <a class="text-white" style="color: white" href="/student/sign-out"
+          >signout</a
+        >
+      </li>
+      <%}else{%>
+
+      <li>
+        <a class="text-white" href="/student/sign-in">signin</a>
+      </li>
+
+      <li>
+        <a class="text-white" href="/student/sign-up">signup</a>
+      </li>
+
+      <%}%>
+    </ul>
   </div>
-  <ul>
-    <%if(locals.student){%>
-    <li><%=student.name%></li>
-    <li>
-      <a style="color: white" href="/student/sign-out">signout</a>
-    </li>
-    <%}else{%>
-
-    <li>
-      <a href="/student/sign-in">signin</a>
-    </li>
-
-    <li>
-      <a href="/student/sign-up">signup</a>
-    </li>
-
-    <%}%>
-  </ul>
 </nav>
 
 <body>
@@ -80,20 +82,18 @@
               <li>
                 <hr class="dropdown-divider" />
               </li>
-              <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact">Contact Us</a>
+            <a class="nav-link" href="#">Contact Us</a>
           </li>
         </ul>
         <form class="d-flex">
           <input
             class="form-control me-2"
             type="search"
-            placeholder="Search"
+            placeholder="complaint number"
             aria-label="Search"
           />
           <button class="btn btn-outline-success" type="submit">Search</button>
