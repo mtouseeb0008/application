@@ -1,9 +1,25 @@
 // student sign
 const Student = require("../models/student");
 module.exports.profile = function (req, res) {
-  return res.render("profile", {
-    title: "profile",
+  Student.findById(req.params.id, function (err, student) {
+    return res.render("profile", {
+      title: "profile",
+      profile_user: student,
+    });
   });
+};
+module.exports.update = function (req, res) {
+  if (req.user.id == req.params.id) {
+    Student.findByIdAndUpdate(
+      req.params.id,
+      { name: req.body.name },
+      function (err, student) {
+        return res.redirect("back");
+      }
+    );
+  } else {
+    return res.status(401).send("unathorised");
+  }
 };
 module.exports.signup = function (req, res) {
   if (req.isAuthenticated()) {

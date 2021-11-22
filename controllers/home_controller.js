@@ -1,28 +1,28 @@
 const Application = require("../models/application");
 const Post = require("../models/post");
+const Student = require("../models/student");
 const { post } = require("../routes");
-module.exports.home = function (req, res) {
-  // Post.find({}, function (err, posts) {
-  //   return res.render("home", {
-  //     title: "kuldeep",
-  //     posts: posts,
-  //   });
-  // });
+module.exports.home = async function (req, res) {
   // populate user object
-  Post.find({})
-    .populate("student")
-    .populate({
-      path: "comments",
-      populate: {
-        path: "student",
-      },
-    })
-    .exec(function (err, post) {
-      return res.render("home", {
-        title: "kuldeep",
-        posts: post,
+  try {
+    let post = await Post.find({})
+      .populate("student")
+      .populate({
+        path: "comments",
+        populate: {
+          path: "student",
+        },
       });
+    let student = await Student.find({});
+
+    return res.render("home", {
+      title: "kuldeep",
+      posts: post,
+      all_users: student,
     });
+  } catch (err) {
+    console.log(err);
+  }
 };
 module.exports.contact = function (req, res) {
   Application.find({}, function (err, applicationdata) {

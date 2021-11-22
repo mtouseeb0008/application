@@ -78,3 +78,14 @@
 </div>
 
 <!-- <div><%-include('_post')-%></div> -->
+
+<section id="student-friend">
+  <h4>friend</h4>
+  <%for(u of all_users){%>
+
+  <p>
+    <a href="/student/profile/<%=u.id%>"><%=u.name%></a>
+  </p>
+
+  <% }%>
+</section>
