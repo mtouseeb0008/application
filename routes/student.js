@@ -19,7 +19,7 @@ router.post("/create", studentController.create);
 // use passport as middleware to authentication
 router.post(
   "/create-session",
-  passport.authenticate("local", { failureRedirect: "student/sign-in" }),
+  passport.authenticate("student", { failureRedirect: "student/sign-in" }),
   studentController.createSession
 );
 

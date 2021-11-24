@@ -12,7 +12,7 @@ router.post("/create", TeacherController.create);
 // use passport as middleware to authentication
 router.post(
   "/create-session",
-  passport.authenticate("local", { failureRedirect: "teacher/sign-in" }),
+  passport.authenticate("teacher", { failureRedirect: "teacher/sign-in" }),
   TeacherController.createSession
 );
 

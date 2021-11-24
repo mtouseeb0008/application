@@ -2,6 +2,22 @@ const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema(
   {
+    branch: {
+      type: String,
+      required: true,
+    },
+    subject: {
+      type: String,
+      required: true,
+    },
+    year: {
+      type: String,
+      required: true,
+    },
+    teacher: {
+      type: String,
+      required: true,
+    },
     content: {
       type: String,
       required: true,

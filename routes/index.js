@@ -9,4 +9,5 @@ router.use("/student", require("./student"));
 router.use("/teacher", require("./teacher"));
 router.use("/post", require("./post"));
 router.use("/comments", require("./comments"));
+router.use("/status", require("./status"));
 module.exports = router;

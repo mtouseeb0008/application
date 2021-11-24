@@ -1,0 +1,40 @@
+</section>
+<%if(locals.student){%>
+<div id="feed-list">
+  <ul>
+    <% for(post of posts) {%>
+    <li>
+      <%if((locals.student)&&(locals.student.id=post.student.id)){%>
+      <small> <a href="/post/destroy/<%=post.id%>">delete</a> </small><%}%>
+      <%=post.content%>
+      <small> <%=post.student.name%> </small>
+    </li>
+    <div class="post-comments">
+      <form action="/comments/create" method="POST">
+        <input
+          type="text"
+          name="content"
+          placeholder="Type Here to add comment.."
+        />
+        <input type="hidden" name="post" value="<%=post._id%>" />
+        <input type="submit" value="add comment" />
+      </form>
+    </div>
+    <div class="post-comments-list">
+      <ul id="post-comments-<%=post._id%>" class="post-comments">
+        <% for(comment of post.comments){%>
+        <p>
+          <%if((locals.student)&&(locals.student.id=comment.student.id)){%>
+          <small> <a href="/comments/destroy/<%=comment.id%>">delete</a> </small
+          ><%}%> <%=comment.content%>
+          <br />
+          <small> <%=comment.student.name%> </small>
+        </p>
+
+        <%}%>
+      </ul>
+    </div>
+    <%}%>
+  </ul>
+</div>
+<%}%>

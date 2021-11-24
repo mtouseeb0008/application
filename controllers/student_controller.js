@@ -75,6 +75,7 @@ module.exports.create = function (req, res) {
       console.log("student loging failed");
       return;
     }
+    console.log(student);
     if (!student) {
       Student.create(
         {

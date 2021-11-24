@@ -27,29 +27,31 @@ module.exports.create = function (req, res) {
   if (req.body.password != req.body.confirm_password) {
     return res.redirect("back");
   }
-  Teacher.findOne({ teaherId: req.body.teaherId }, function (err, teacher) {
+  console.log(req.body.teacherId);
+  Teacher.findOne({ teacherId: req.body.teacherId }, function (err, teacher) {
     if (err) {
       console.log("Teacher loging failed");
       return;
     }
+    console.log(teacher);
     if (!teacher) {
-      console.log(req.body),
-        Teacher.create(
-          {
-            teacherName: req.body.name,
-            teacherDepartment: req.body.teacherDepartment,
-            teacherId: req.body.teacherId,
-            password: req.body.password,
-          },
-          function (err, newApplication) {
-            if (err) {
-              console.log("error in creating application");
-              return;
-            }
-            console.log("******", newApplication);
-            return res.redirect("/teacher/sign-in");
+      console.log(req.body);
+      Teacher.create(
+        {
+          teacherName: req.body.name,
+          teacherDepartment: req.body.teacherDepartment,
+          teacherId: req.body.teacherId,
+          password: req.body.password,
+        },
+        function (err, newApplication) {
+          if (err) {
+            console.log("error in creating application");
+            return;
           }
-        );
+          console.log("******", newApplication);
+          return res.redirect("/teacher/sign-in");
+        }
+      );
     } else {
       return res.redirect("back");
     }
