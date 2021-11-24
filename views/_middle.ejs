@@ -4,14 +4,31 @@
     <div class="col p-3 bg-dark text-white">
       <div class="row">
         <div class="col-sm-6">
+          <%if(locals.student){%>
+          <h6><%=student.name%></h6>
+          <%}else{%>
           <h6>Student login</h6>
-          <img
-            src="/images/user.jpg"
-            class="rounded-circle"
-            alt="Cinque Terre"
-            width="100"
-            height="110"
-          />
+          <%}%> <%if(locals.student){%>
+          <a href="/student/profile/<%=student.id%>">
+            <img
+              src="<%=student.avatar%>"
+              class="rounded-circle"
+              alt="Cinque Terre"
+              width="100"
+              height="110"
+            />
+          </a>
+          <%}else{%>
+          <a href="/student/sign-in">
+            <img
+              src="/images/user.jpg"
+              class="rounded-circle"
+              alt="Cinque Terre"
+              width="100"
+              height="110"
+            />
+          </a>
+          <%}%>
         </div>
         <div class="col-sm-6">
           <!-- <h6>Status of complaint</h6> -->

@@ -1,8 +1,12 @@
 <h1>profile</h1>
-
+<img src="<%=student.avatar%>" alt="profile" widht="100" height="100" />
 <%if(student.id==profile_user.id){%>
 <!-- if student matches then show the form -->
-<form action="/student/update/<%=profile_user.id%>" method="post">
+<form
+  action="/student/update/<%=profile_user.id%>"
+  enctype="multipart/form-data"
+  method="post"
+>
   <input
     type="text"
     name="name"
@@ -10,6 +14,7 @@
     value="<%=profile_user.name%>"
     required
   />
+  <input type="file" name="avatar" placeholder="profile picture" />
   <input type="submit" value="submit" />
 </form>
 

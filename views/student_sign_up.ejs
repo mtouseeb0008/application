@@ -1,4 +1,4 @@
-<h1>sign up</h1>
+<!-- <h1>sign up</h1>
 <form action="/student/create" method="POST">
   <input type="text" name="name" placeholder="Enter name" required />
   <input type="number" name="rollno" placeholder="Enter rollno" required />
@@ -15,4 +15,26 @@
     required
   />
   <button type="submit">Add</button>
-</form>
+</form> -->
+
+<link rel="stylesheet" href="/css/style3.css" />
+<div>
+  <form class="box" action="/student/create" method="POST">
+    <h3 class="text-white">Student signup</h3>
+    <input type="text" name="name" placeholder="Enter name" required />
+    <input type="text" name="rollno" placeholder="enter rollno" id="username" />
+    <input
+      type="password"
+      name="password"
+      placeholder="enter password"
+      id="password"
+    />
+    <input
+      type="password"
+      name="confirm_password"
+      placeholder=" re Enter password"
+      required
+    />
+    <input type="submit" name="" value="signup" />
+  </form>
+</div>

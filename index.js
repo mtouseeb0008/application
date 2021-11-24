@@ -14,7 +14,8 @@ const expressLayout = require("express-ejs-layouts");
 app.use(express.static("assets"));
 app.use(express.urlencoded());
 app.use(cookieParser());
-
+//make the upload path to brouser
+app.use("/uploads/", express.static(__dirname + "/uploads"));
 app.use(expressLayout);
 app.set("view engine", "ejs");
 app.set("views", "./views");
