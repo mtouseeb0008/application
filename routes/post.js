@@ -5,6 +5,11 @@ const postController = require("../controllers/posts_controller");
 router.post("/create", passport.checkAuthentication, postController.create);
 router.get("/ragister", passport.checkAuthentication, postController.ragister);
 router.get(
+  "/applicationdata",
+  passport.checkAuthentication,
+  postController.applicationdata
+);
+router.get(
   "/destroy/:id",
   passport.checkAuthentication,
   postController.destroy

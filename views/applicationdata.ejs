@@ -1,0 +1,68 @@
+<%if(locals.student){%>
+<link rel="stylesheet" href="/css/style10.css" />
+<div class="container fontsize">
+  <div class="row">
+    <div class="col-sm-4">
+      <img class="logo" src="/images/college logo.jfif" alt="" />
+    </div>
+    <div class="col-sm-8 college">
+      <span class="college-hname">राजकीय इंजीनियरिंग कॉलेज सोनभद्र</span>
+      <span class="college-ename"> Rajkiya Engineering College Sonbhadra</span>
+      <span class="college-name"
+        >An AICTE approved Government Engineering College affiliated to AKTU
+        Lucknow (College Code 841)</span
+      >
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 application text-center">
+      <h3>APPLICATION FORM ID</h3>
+      <%=posts._id%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 to">TO</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 teacher">The <%=posts.teacher%> sir</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 teacher_c">
+      Rajkiya engineering college Sonbhadra U.P.
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 subject">
+      Subject:-<span class="post"> <%=posts.subject%></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12" id="respect">Respect sir ,</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 content"><%=posts.content%></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 respect">Your obediently</div>
+    <div class="col-sm-6 date">
+      Date
+      <span><%=posts.createdAt%></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 footerdata">Name:<%=locals.student.name%></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 footerdata">Rollno:<%=locals.student.rollno%></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 footerdata">Year:<%=posts.year%></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 footerdata">Mobile:<%=posts.mobile%></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 footerdata">Branch:<%=posts.branch%></div>
+  </div>
+</div>
+<%}%>

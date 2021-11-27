@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+:root {
+  --main-bg: #1e272e;
+  --main-color: #0097e6;
+}
+
+/* html {
+  font-size: 62.5%;
+} */
+.fontsize {
+  font-size: 1rem;
+}
+
+.logo {
+  height: 8rem;
+  width: 8rem;
+}
+.college {
+  font-size: 1rem !important;
+}
+.college-hname {
+  display: block;
+  font-size: 1.5rem;
+  color: red;
+}
+.college-ename {
+  display: block;
+  color: red;
+  font-size: 1.5rem;
+}
+.college-name {
+  font-size: 1rem;
+  color: rgb(96, 15, 172);
+}
+.application {
+  font-weight: bold;
+}
+.to {
+}
+.teacher {
+  margin-left: 0.8rem;
+  font-weight: bold;
+}
+.teacher_c {
+  margin-left: 0.8rem;
+  font-weight: bold;
+}
+.subject {
+  font-weight: bold;
+}
+#respect {
+  margin-left: 0.8rem;
+  font-weight: bold;
+}
+.content {
+  height: 8rem;
+  width: 100%;
+  /* border: 0.1rem solid; */
+}
+.respect {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.date {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: right;
+}
+.footerdata {
+  font-size: 1rem;
+}
+.post {
+  color: blue;
+}

@@ -1,12 +1,14 @@
 const Post = require("../models/post");
 const Comment = require("../models/comment");
 module.exports.create = function (req, res) {
+  console.log(req.body);
   Post.create(
     {
       branch: req.body.branch,
       subject: req.body.subject,
       year: req.body.year,
       teacher: req.body.teacher,
+      mobile: req.body.contact,
       content: req.body.content,
       student: req.user._id,
     },
@@ -14,7 +16,10 @@ module.exports.create = function (req, res) {
       if (err) {
         console.log("error in creating post");
       }
-      return res.redirect("back");
+      return res.render("applicationdata", {
+        title: "post",
+        posts: post,
+      });
     }
   );
 };
@@ -37,8 +42,19 @@ module.exports.destroy = function (req, res) {
 
 module.exports.ragister = function (req, res) {
   if (req.isAuthenticated()) {
-    return res.render("_post", {
+    return res.render("complain_ragister", {
       title: "post",
+    });
+  }
+  return res.render("student_sign", {
+    title: "Student signin",
+  });
+};
+
+module.exports.applicationdata = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.render("applicationdata", {
+      title: "application",
     });
   }
   return res.render("student_sign", {
