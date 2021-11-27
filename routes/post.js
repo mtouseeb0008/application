@@ -3,6 +3,7 @@ const router = express.Router();
 const passport = require("passport");
 const postController = require("../controllers/posts_controller");
 router.post("/create", passport.checkAuthentication, postController.create);
+router.post("/search", passport.checkAuthentication, postController.search);
 router.get("/ragister", passport.checkAuthentication, postController.ragister);
 router.get(
   "/applicationdata",

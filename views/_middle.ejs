@@ -40,8 +40,9 @@
             height="40"
           />
           <p>Status of complaint</p>
-          <form class="d-flex">
+          <form action="/post/search" class="d-flex" method="post">
             <input
+              name="complainno"
               class="form-control me-2"
               type="search"
               placeholder="complaint number"

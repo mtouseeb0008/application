@@ -1,6 +1,6 @@
 <%if(locals.student){%>
 <link rel="stylesheet" href="/css/style10.css" />
-<div class="container fontsize">
+<div id="printelement" class="container fontsize">
   <div class="row">
     <div class="col-sm-4">
       <img class="logo" src="/images/college logo.jfif" alt="" />
@@ -62,7 +62,10 @@
     <div class="col-sm-12 footerdata">Mobile:<%=posts.mobile%></div>
   </div>
   <div class="row">
-    <div class="col-sm-12 footerdata">Branch:<%=posts.branch%></div>
+    <div class="col-sm-8 footerdata">Branch:<%=posts.branch%></div>
+    <div class="col-sm-4 footerdata">
+      <input type="button" value="print" onclick="window.print()" />
+    </div>
   </div>
 </div>
 <%}%>

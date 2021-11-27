@@ -23,6 +23,14 @@ module.exports.create = function (req, res) {
     }
   );
 };
+module.exports.search = function (req, res) {
+  if (req.isAuthenticated()) {
+    return res.redirect(`/post/applicationdata/${req.body.complainno}`);
+  }
+  return res.render("student_sign", {
+    title: "Student signin",
+  });
+};
 
 module.exports.destroy = function (req, res) {
   Post.findById(req.params.id, function (err, post) {
