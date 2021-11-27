@@ -17,7 +17,7 @@ module.exports.create = function (req, res) {
         console.log("error in creating post");
       }
       return res.render("applicationdata", {
-        title: "post",
+        title: "apllicationdata",
         posts: post,
       });
     }
@@ -51,7 +51,7 @@ module.exports.destroy = function (req, res) {
 module.exports.ragister = function (req, res) {
   if (req.isAuthenticated()) {
     return res.render("complain_ragister", {
-      title: "post",
+      title: "complain",
     });
   }
   return res.render("student_sign", {

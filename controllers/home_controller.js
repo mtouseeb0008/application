@@ -16,7 +16,7 @@ module.exports.home = async function (req, res) {
     let student = await Student.find({});
 
     return res.render("home", {
-      title: "kuldeep",
+      title: "home",
       posts: post,
       all_users: student,
     });

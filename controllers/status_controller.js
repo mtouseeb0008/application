@@ -15,7 +15,7 @@ module.exports.getstatus = async function (req, res) {
     let student1 = await Student.find({});
     let student = await Student.findById(req.params.id);
     return res.render("status2", {
-      title: "kuldeep",
+      title: "status",
       posts: post,
       all_users: student1,
       profile_user: student,
