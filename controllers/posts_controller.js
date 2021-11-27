@@ -51,10 +51,12 @@ module.exports.ragister = function (req, res) {
   });
 };
 
-module.exports.applicationdata = function (req, res) {
+module.exports.applicationdata = async function (req, res) {
+  let post = await Post.findById(req.params.id);
   if (req.isAuthenticated()) {
     return res.render("applicationdata", {
       title: "application",
+      posts: post,
     });
   }
   return res.render("student_sign", {

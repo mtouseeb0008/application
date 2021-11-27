@@ -1,0 +1,15 @@
+<%if(locals.student){%>
+<div id="feed-list">
+  <ul>
+    <% for(post of posts) {%>
+    <li>
+      <%if((locals.student)&&(locals.student.id=post.student.id)){%>
+      <small>
+        <a href="/post/applicationdata/<%=post.id%>">showapplication</a> </small
+      ><%}%> <%=post.subject%>
+      <small> <%=post.student.name%> </small>
+    </li>
+    <%}%>
+  </ul>
+</div>
+<%}%>

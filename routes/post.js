@@ -10,6 +10,11 @@ router.get(
   postController.applicationdata
 );
 router.get(
+  "/applicationdata/:id",
+  passport.checkAuthentication,
+  postController.applicationdata
+);
+router.get(
   "/destroy/:id",
   passport.checkAuthentication,
   postController.destroy
