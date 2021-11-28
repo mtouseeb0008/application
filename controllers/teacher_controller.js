@@ -13,7 +13,7 @@ module.exports.signup = function (req, res) {
     title: "Teacher signup",
   });
 };
-//studen sign in page
+//student sign in page
 module.exports.signin = function (req, res) {
   if (req.isAuthenticated()) {
     return res.redirect("/teacher/profile");

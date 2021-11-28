@@ -47,6 +47,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedStudent);
+// app.use(passport.setAuthenticatedTeacher);
 app.use("/", require("./routes"));
 
 app.listen(port, function (err) {

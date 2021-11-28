@@ -2,6 +2,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const Student = require("../models/student");
 const Teacher = require("../models/teacher");
+
 // authentication using passport
 passport.use(
   "student",
@@ -11,6 +12,7 @@ passport.use(
     },
     function (rollno, password, done) {
       // find the user and stablish id
+      console.log(rollno, password);
       Student.findOne({ rollno: rollno }, function (err, student) {
         if (err) {
           console.log("error is finding user", err);
@@ -34,6 +36,7 @@ passport.use(
       usernameField: "teacherId",
     },
     function (teacherId, password, done) {
+      console.log(teacherId);
       // find the user and stablish id
       Teacher.findOne({ teacherId: teacherId }, function (err, teacher) {
         if (err) {
@@ -52,11 +55,6 @@ passport.use(
 
 // serial the user to decide which key is kept to the cookies
 passport.serializeUser(function (student, done) {
-  // var key = {
-  //   id: student.id,
-  //   type: student.userType,
-  // };
-  // done(null, key);
   done(null, student.id);
 });
 // desselinzing the user form the key in the cookies
@@ -68,22 +66,26 @@ passport.deserializeUser(function (id, done) {
     }
     return done(null, student);
   });
-
-  // var Model = key.type === "student" ? Student : Teacher;
-  // Model.findOne(
-  //   {
-  //     _id: key.id,
-  //   },
-  //   function (err, user) {
-  //     if (err) {
-  //       return done(err);
-  //     }
-  //     return done(null, user);
-  //   }
-  // );
 });
+
+// serial the user to decide which key is kept to the cookies
+// passport.serializeUser(function (teacher, done) {
+
+//   done(null, teacher.id);
+// });
+// // desselinzing the user form the key in the cookies
+// passport.deserializeUser(function (id, done) {
+//   Teacher.findById(id, function (err, teacher) {
+//     if (err) {
+//       console.log("invalid Username Password");
+//       return done(err);
+//     }
+//     return done(null, teacher);
+//   });
+// });
 // chek if the user is authentication
 
+// chek if the user is authentication
 passport.checkAuthentication = function (req, res, next) {
   //if the user is signed int then pass on the request to the next function controller's authentication
   if (req.isAuthenticated()) {
@@ -91,7 +93,6 @@ passport.checkAuthentication = function (req, res, next) {
   }
   return res.redirect("/student/sign-in");
 };
-
 passport.setAuthenticatedStudent = function (req, res, next) {
   if (req.isAuthenticated()) {
     res.locals.student = req.user;
@@ -99,4 +100,18 @@ passport.setAuthenticatedStudent = function (req, res, next) {
   next();
 };
 
+// passport.checkAuthentication = function (req, res, next) {
+//   //if the user is signed int then pass on the request to the next function controller's authentication
+//   if (req.isAuthenticated()) {
+//     return next();
+//   }
+//   return res.redirect("/teacher/sign-in");
+// };
+
+// passport.setAuthenticatedTeacher = function (req, res, next) {
+//   if (req.isAuthenticated()) {
+//     res.locals.teacher = req.user;
+//   }
+//   next();
+// };
 module.exports = passport;
