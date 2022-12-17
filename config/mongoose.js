@@ -4,6 +4,10 @@ mongoose.connect("mongodb+srv://kaushalkanaujiya:kaushal12345@cluster0.jpimwrb.m
 
 const db = mongoose.connection;
 
+
+
+
+
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function () {
   // we're connected!
