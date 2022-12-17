@@ -34,7 +34,7 @@ app.use(
     },
     store: MongoStore.create(
       {
-        mongoUrl: "mongodb://localhost/application_manage_db",
+        mongoUrl: "mongodb+srv://kaushalkanaujiya:kaushal12345@cluster0.jpimwrb.mongodb.net/kaushal?retryWrites=true&w=majority",
         autoRemove: "disabled",
       },
       function (err) {
