@@ -31,7 +31,7 @@ body {
   padding: 14px 10px;
   width: 220px;
   outline: none;
-  color: rgb(22, 18, 18);
+  color: rgb(11, 4, 4);
   border-radius: 24px;
   transition: 0.25px;
 }
@@ -49,11 +49,14 @@ body {
   padding: 14px 35px;
   width: 220px;
   outline: none;
-  color: white;
+  color: rgb(27, 20, 20);
   border-radius: 24px;
   transition: 0.25px;
   cursor: pointer;
 }
 .box input[type="submit"]:hover {
-  background: #ffc400ec;
+  background: #1a1ee1ec;
 }
+
+
+

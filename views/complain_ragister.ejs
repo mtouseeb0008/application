@@ -1,84 +1,78 @@
 <%if(locals.student){%>
-<body>
-  <link rel="stylesheet" href="/css/style9.css" />
-  <form action="/post/create" id="new-post-form" method="POST">
-    <div class="wrapper">
-      <div class="title">APPLICATION FORM</div>
-      <div class="form">
-        <div class="input_field">
-          <label>SUBJECT</label>
-          <input type="text" name="subject" class="input" />
-        </div>
 
-        <div class="input_field">
-          <label>BRANCH</label>
-          <div class="custom_select">
-            <select
-              name="branch"
-              id="slct1"
-              onchange="populate(this.id,'teacher')"
-            >
-              <option value="" selected="selected">select department</option>
-              <option
-                value="computer science ans engineering"
-                selected="selected"
-              >
-                computer science ans engineering
-              </option>
-              <option value="eletrical engineering" selected="selected">
-                eletrical engineering
-              </option>
-              <option value="eletronics engineering" selected="selected">
-                eletronics engineering
-              </option>
-            </select>
+  <body>
+    <link rel="stylesheet" href="/css/style9.css" />
+    <form action="/post/create" id="new-post-form" method="POST">
+      <div class="wrapper">
+        <div class="title">APPLICATION FORM</div>
+        <div class="form">
+          <div class="input_field">
+            <label>SUBJECT</label>
+            <input type="text" name="subject" class="input" />
           </div>
-        </div>
 
-        <div class="input_field">
-          <label>YEAR</label>
-          <div class="custom_select">
-            <select name="year">
-              <option value="">Select</option>
-              <option value="1st Year">1st Year</option>
-              <option value="2nd Year">2nd Year</option>
-              <option value="3rd Year">3rd Year</option>
-              <option value="4th Year">4th Year</option>
-            </select>
+          <div class="input_field">
+            <label>BRANCH</label>
+            <div class="custom_select">
+              <select name="branch" id="slct1" onchange="populate(this.id,'teacher')">
+                <option value="" selected="selected">select department</option>
+                <option value="computer science ans engineering" selected="selected">
+                  computer science ans engineering
+                </option>
+                <option value="eletrical engineering" selected="selected">
+                  eletrical engineering
+                </option>
+                <option value="eletronics engineering" selected="selected">
+                  eletronics engineering
+                </option>
+              </select>
+            </div>
           </div>
-        </div>
 
-        <div class="input_field">
-          <label>TEACHER'S</label>
-          <div class="custom_select">
-            <select name="teacher" id="teacher">
-              <option value="" selected="selected">Select Teacher</option>
-            </select>
+          <div class="input_field">
+            <label>YEAR</label>
+            <div class="custom_select">
+              <select name="year">
+                <option value="">Select</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="input_field">
-          <label>CONTACT NUMBER</label>
-          <input name="contact" type="text" class="input" />
-        </div>
-        <div class="input_field">
-          <label>YOUR'S COMPLAIN</label>
-          <textarea name="content" class="textarea"></textarea>
-        </div>
 
-        <div class="input_field term">
-          <label class="check">
-            <input type="checkbox" />
-            <span class="checkmark"></span>
-          </label>
-          <p>Agreed to term and condition</p>
-        </div>
+          <div class="input_field">
+            <label>TEACHER'S</label>
+            <div class="custom_select">
+              <select name="teacher" id="teacher">
+                <option value="" selected="selected">Select Teacher</option>
+              </select>
+            </div>
+          </div>
+          <div class="input_field">
+            <label>CONTACT NUMBER</label>
+            <input name="contact" type="text" class="input" />
+          </div>
+          <div class="input_field">
+            <label>YOUR'S COMPLAIN</label>
+            <textarea name="content" class="textarea"></textarea>
+          </div>
 
-        <div class="input_field">
-          <input type="submit" value="Rigister" class="btn" />
+          <div class="input_field term">
+            <label class="check">
+              <input type="checkbox" />
+              <span class="checkmark"></span>
+            </label>
+            <p>Agreed to term and condition</p>
+          </div>
+
+          <div class="input_field">
+            <input type="submit" value="Rigister" class="btn" />
+          </div>
         </div>
       </div>
-    </div>
-  </form>
-  <script src="/js/casacading.js"></script>
-</body>
-<%}%>
+    </form>
+    <script src="/js/casacading.js"></script>
+  </body>
+  <%}%>

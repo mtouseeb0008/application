@@ -15,18 +15,22 @@
       <li><%=student.name%></li>
       <li>
         <a class="text-white" style="color: white" href="/student/sign-out"
-          >signout</a
+          >Signout</a
         >
       </li>
       <%}else{%>
+        <div class="mx-2" >
+          <a href="/student/sign-in"><button  class="btn btn-danger" data-toggle="modal" data-target=" #loginModal">Signin</button></a>
+          <a href="/student/sign-up"><button class="btn btn-danger" data-toggle="modal" data-target=" #SignUpModal">Signup</button></a>
+        </div>
 
-      <li>
-        <a class="text-white" href="/student/sign-in">signin</a>
+      <!-- <li>
+        <a class="text-white" href="/student/sign-in">Signin</a>
       </li>
 
       <li>
-        <a class="text-white" href="/student/sign-up">signup</a>
-      </li>
+        <a class="text-white" href="/student/sign-up">Signup</a>
+      </li> -->
 
       <%}%>
     </ul>
@@ -70,14 +74,14 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
                 <a class="dropdown-item" href="#"
-                  >Computer Sience and engineering</a
+                  >Computer Sience and Engineering</a
                 >
               </li>
               <li>
-                <a class="dropdown-item" href="#">Electronic engineering</a>
+                <a class="dropdown-item" href="#">Electronic Engineering</a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">Electical engineering</a>
+                <a class="dropdown-item" href="#">Electical Engineering</a>
               </li>
               <li>
                 <hr class="dropdown-divider" />
@@ -99,6 +103,7 @@
           />
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+        
       </div>
     </div>
   </nav>
